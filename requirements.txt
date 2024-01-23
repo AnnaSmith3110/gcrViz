@@ -1,0 +1,8 @@
+streamlit
+pandas
+plotly
+matplotlib
+altair
+numpy
+pytz
+streamlit_tags

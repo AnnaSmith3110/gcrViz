@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+</head>
+<body>
+    <!-- Student's photo in the top right -->
+    <img src="<%= user.profile.photos[0].value %>" alt="Teacher Photo" style="float: right; margin-right: 20px;">
+
+    <!-- Other student-related information can be displayed here -->
+    <h1>Welcome, <%= user.profile.displayName %></h1>
+    <h2>Your students</h2>
+    <ul>
+        <% students.forEach(student => { %>
+            <li>
+                <%= student.userId %>
+                <br>
+                <%= student.profile.name %>
+                <br>
+                <%= student.profile.verifiedTeacher %>
+                <br>
+                <%= student.studentWorkFolder %>
+            </li>
+        <% }) %>
+    </ul>
+
+    <h2>Your Courses</h2>
+    <ul>
+        <!-- Loop through and display enrolled courses -->
+        <% courses.forEach(course => { %>
+            <li>
+                <%= course.name %>
+                <ul>
+                    <!-- Loop through and display coursework for each course -->
+                    <% course.courseWorkSubmissions.forEach(courseWork => { %>
+                        <li>
+                            <%= courseWork.title %>:
+                            <ul>
+                                <!-- Loop through and display student submissions for each coursework -->
+                                <% courseWork.submissions.forEach(submission => { %>
+                                    <li>
+                                        Assigned to: <%= submission.userId %>
+                                        <br>
+                                        Creation Time: <%= submission.creationTime %>
+                                        <br>
+                                        Graded: <%= submission.draftGrade %>
+                                        <br>
+                                        State <%= submission.state %>
+                                        <br>
+                                        Late <%= submission.late  %>
+                                        <br>
+                                        <!-- Add more submission details as needed -->
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        </li>
+                    <% }) %>
+                </ul>
+            </li>
+        <% }) %>
+    </ul>
+
+    <!-- Add more divs and information as needed -->
+
+</body>
+</html>

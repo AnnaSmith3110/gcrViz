@@ -1,0 +1,284 @@
+[
+    {
+        "id": "523236638758",
+        "name": "INTRODUCTION TO BLOCKCHAIN TECHNOLOGIES (VCSC 514) V BCA A",
+        "section": "A",
+        "descriptionHeading": "V BCA A & b",
+        "description": "VALUE ADDED COURSE",
+        "ownerId": "115862934479930997742",
+        "creationTime": "2023-08-03T05:06:46.068Z",
+        "updateTime": "2023-08-05T03:55:09.405Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTIzMjM2NjM4NzU4",
+        "teacherGroupEmail": "V_BCA_A_b_teachers_58417d88@christuniversity.in",
+        "courseGroupEmail": "V_BCA_A_b_81a9ee57@christuniversity.in",
+        "guardiansEnabled": false,
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "554539106018",
+        "name": "Project - 5 BCA A",
+        "descriptionHeading": "Project - 5 BCA A",
+        "ownerId": "104894420814980909242",
+        "creationTime": "2023-07-11T04:37:51.115Z",
+        "updateTime": "2023-07-11T04:37:51.115Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTU0NTM5MTA2MDE4",
+        "teacherGroupEmail": "Project_5_BCA_A_teachers_3415aaf3@christuniversity.in",
+        "courseGroupEmail": "Project_5_BCA_A_bd68a5dc@christuniversity.in",
+        "guardiansEnabled": false,
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "616046823708",
+        "name": "5BCA - CYBER SECURITY",
+        "section": "A & B",
+        "descriptionHeading": "5BCA - CYBER SECURITY A & B",
+        "ownerId": "110072043782430744365",
+        "creationTime": "2023-07-13T04:55:34.588Z",
+        "updateTime": "2023-07-13T04:55:34.588Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NjE2MDQ2ODIzNzA4",
+        "teacherGroupEmail": "5BCA_CYBER_SECURITY_A_B_teachers_f9d49123@christuniversity.in",
+        "courseGroupEmail": "5BCA_CYBER_SECURITY_A_B_81c4b8c4@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom1cb23e1a@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "615878177913",
+        "name": "Mobile App BCA 2023",
+        "descriptionHeading": "Mobile App 2023",
+        "ownerId": "104894420814980909242",
+        "creationTime": "2023-07-07T23:44:59.916Z",
+        "updateTime": "2023-07-14T08:54:54.099Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NjE1ODc4MTc3OTEz",
+        "teacherGroupEmail": "Mobile_App_2023_teachers_b4adc1f4@christuniversity.in",
+        "courseGroupEmail": "Mobile_App_2023_a43a5a56@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroombc36d11d@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "523059042817",
+        "name": "BCA532 COMPUTER NETWORKS",
+        "section": "A",
+        "descriptionHeading": "5BCA A",
+        "ownerId": "115862934479930997742",
+        "creationTime": "2023-07-04T17:14:42.968Z",
+        "updateTime": "2023-08-05T03:56:37.798Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTIzMDU5MDQyODE3",
+        "teacherGroupEmail": "5BCA_A_teachers_92fdf08f@christuniversity.in",
+        "courseGroupEmail": "5BCA_A_1d7adf76@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom1365b340@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "615738239019",
+        "name": "Sec A 2023 5 BCA PyProgramming",
+        "section": "A",
+        "descriptionHeading": "5BCA A",
+        "description": "BCA531 & BCA 551",
+        "ownerId": "100144414538944210250",
+        "creationTime": "2023-07-05T08:12:18.853Z",
+        "updateTime": "2023-07-06T09:07:08.350Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NjE1NzM4MjM5MDE5",
+        "teacherGroupEmail": "5BCA_A_teachers_4f20ecc1@christuniversity.in",
+        "courseGroupEmail": "5BCA_A_219ca7f1@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom5ee8d5c5@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "588159359097",
+        "name": "4BCA A_Maths",
+        "descriptionHeading": "4BCA A_Maths",
+        "ownerId": "108602854013698293318",
+        "creationTime": "2023-02-02T06:42:49.813Z",
+        "updateTime": "2023-02-02T06:42:49.813Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTg4MTU5MzU5MDk3",
+        "teacherGroupEmail": "4BCA_A_Maths_teachers_aee67359@christuniversity.in",
+        "courseGroupEmail": "4BCA_A_Maths_7af93ce3@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom10dd778d@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "512802191221",
+        "name": "4BCA-A",
+        "section": "A Section",
+        "descriptionHeading": "4BCA-A A Section",
+        "ownerId": "105928554508687619311",
+        "creationTime": "2023-01-28T04:47:35.803Z",
+        "updateTime": "2023-01-28T04:47:35.803Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTEyODAyMTkxMjIx",
+        "teacherGroupEmail": "4BCA_A_A_Section_teachers_bb269316@christuniversity.in",
+        "courseGroupEmail": "4BCA_A_A_Section_0ed145d3@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom9314d26a@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "585610448082",
+        "name": "Financial Management",
+        "section": "4BCA A",
+        "descriptionHeading": "Financial Management 4BCA A",
+        "ownerId": "101264017535193812241",
+        "creationTime": "2023-01-23T15:14:31.052Z",
+        "updateTime": "2023-01-23T15:14:31.052Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTg1NjEwNDQ4MDgy",
+        "teacherGroupEmail": "Financial_Management_4BCA_A_teachers_3ec18794@christuniversity.in",
+        "courseGroupEmail": "Financial_Management_4BCA_A_f2847381@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroomb51d747f@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "509480666285",
+        "name": "2022-23 (Even): 4 BCA A",
+        "section": "DAA",
+        "descriptionHeading": "4 BCA A 2022-23 (Even)",
+        "description": "DAA",
+        "room": "701",
+        "ownerId": "113595268142729335284",
+        "creationTime": "2023-01-09T10:42:08.825Z",
+        "updateTime": "2023-01-19T03:47:04.872Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTA5NDgwNjY2Mjg1",
+        "teacherGroupEmail": "4_BCA_A_2022_23_Even_teachers_189dfb2c@christuniversity.in",
+        "courseGroupEmail": "4_BCA_A_2022_23_Even_94a617d5@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroomf685baa6@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "509219014376",
+        "name": "IV BCA A DBMS PROJECT LAB 2023",
+        "descriptionHeading": "IV BCA A DBMS PROJECT LAB 2023",
+        "ownerId": "101774641049763145622",
+        "creationTime": "2023-01-02T03:55:10.829Z",
+        "updateTime": "2023-01-02T03:55:10.829Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NTA5MjE5MDE0Mzc2",
+        "teacherGroupEmail": "IV_BCA_A_DBMS_PROJECT_LAB_2023_teachers_1fb38a31@christuniversity.in",
+        "courseGroupEmail": "IV_BCA_A_DBMS_PROJECT_LAB_2023_61dfa57c@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroomb62c9608@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "508389187855",
+        "name": "Sec - A - Dot Net Lab -  2023",
+        "section": "A",
+        "descriptionHeading": ".Net Lab - Sec - A 2023 A",
+        "ownerId": "100144414538944210250",
+        "creationTime": "2022-12-07T07:50:58.521Z",
+        "updateTime": "2023-07-04T23:02:02.973Z",
+        "courseState": "ARCHIVED",
+        "alternateLink": "https://classroom.google.com/c/NTA4Mzg5MTg3ODU1",
+        "teacherGroupEmail": "Net_Lab_Sec_A_2023_A_teachers_70a6698c@christuniversity.in",
+        "courseGroupEmail": "Net_Lab_Sec_A_2023_A_5f5836f1@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroomdf6042b7@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "537971388352",
+        "name": "3BCA - German - Aug 2022",
+        "section": "A & B",
+        "descriptionHeading": "3BCA - German - Aug 2022 A & B",
+        "ownerId": "108602854013698293318",
+        "creationTime": "2022-08-06T07:54:55.163Z",
+        "updateTime": "2023-07-16T19:20:02.611Z",
+        "courseState": "ARCHIVED",
+        "alternateLink": "https://classroom.google.com/c/NTM3OTcxMzg4MzUy",
+        "teacherGroupEmail": "3BCA_German_Aug_2022_A_B_teachers_cc68e419@christuniversity.in",
+        "courseGroupEmail": "3BCA_German_Aug_2022_A_B_32a79043@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom8fd13e2c@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "488729800754",
+        "name": "3BCA A - Maths - Aug 2022",
+        "descriptionHeading": "3BCA A - Maths - Aug 2022",
+        "ownerId": "108602854013698293318",
+        "creationTime": "2022-08-06T07:48:57.324Z",
+        "updateTime": "2022-08-06T07:48:57.323Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NDg4NzI5ODAwNzU0",
+        "teacherGroupEmail": "3BCA_A_Maths_Aug_2022_teachers_0969a363@christuniversity.in",
+        "courseGroupEmail": "3BCA_A_Maths_Aug_2022_b599adff@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom2551f635@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    },
+    {
+        "id": "497348284280",
+        "name": "3BCA \"A\"",
+        "section": "A",
+        "descriptionHeading": "3BCA \"A\" A",
+        "ownerId": "106836867407221238677",
+        "creationTime": "2022-08-06T06:00:36.244Z",
+        "updateTime": "2022-08-06T06:00:36.244Z",
+        "courseState": "ACTIVE",
+        "alternateLink": "https://classroom.google.com/c/NDk3MzQ4Mjg0Mjgw",
+        "teacherGroupEmail": "3BCA_A_A_teachers_a404b046@christuniversity.in",
+        "courseGroupEmail": "3BCA_A_A_5eca5964@christuniversity.in",
+        "guardiansEnabled": false,
+        "calendarId": "c_classroom2f44f269@group.calendar.google.com",
+        "gradebookSettings": {
+            "calculationType": "TOTAL_POINTS",
+            "displaySetting": "HIDE_OVERALL_GRADE"
+        }
+    }
+]

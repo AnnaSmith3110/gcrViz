@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha384-5BgA6FXhDFO/eRVoOW3fSAaPxXcwJ+5ARb/ELPn3Xy1Gwv8A+wnceVq5d25kcfz" crossorigin="anonymous">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <title>Login</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+    body {
+        background: #FAF3EC;
+        font-family: 'Roboto';
+        background: linear-gradient(to bottom, #001F3F, #003366);
+        /* For older browsers */
+        background: -webkit-linear-gradient(top, #001F3F, #003366);
+        /* Optional: Add a fallback solid background color */
+        background-color: #003366;
+
+    }
+
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #748194;
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #748194;
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: #748194;
+    }
+
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: #748194;
+    }
+
+    .container {
+        display: none;
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: calc(50% - 240px);
+        left: calc(40% - 160px);
+        border-radius: 15px 15px 15px 15px;
+    }
+
+    .c1 {
+        box-shadow: 0 0 10px grey;
+        background-color: white;
+        width: 300px;
+        height: 500px;
+        display: inline-block;
+        border-radius: 15px 15px 15px 15px;
+    }
+
+    .c11 {
+        background-image: url('https://i.pinimg.com/736x/b8/09/22/b80922f6ea2daaf36a6627378662803b--deck-of-cards-phone-wallpapers.jpg');
+        background-size: 300px 400px;
+        background-repeat: no-repeat;
+        background-color: white;
+        width: 300px;
+        height: 400px;
+        display: inline-block;
+        position: absolute;
+        z-index: 4;
+        border-radius: 15px 15px 200px 200px;
+    }
+
+    #left,
+    #right, #bottom {
+        color: white;
+        display: inline-block;
+        width: 146px;
+        height: 500px;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    #bottom {
+        width: 100%;
+        margin-bottom: 0 !important;
+    }
+    #left {
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    #right {
+        border-radius: 15px 15px 15px 0px;
+    }
+
+    .left_hover {
+        color: #EE9BA3;
+        box-shadow: 5px 0 18px -10px #333;
+        z-index: 1;
+        position: absolute;
+    }
+
+    .right_hover {
+        box-shadow: -5px 0 15px -10px #333;
+        z-index: 1;
+        position: absolute;
+    }
+
+    .s1class {
+        color: #748194;
+        position: absolute;
+        bottom: 0;
+        left: 63%;
+        margin-left: -50%;
+    }
+
+    .s1class span,
+    .s2class span {
+        display: block;
+    }
+
+    .su {
+        font-size: 20px;
+    }
+
+    .s2class {
+        color: #748194;
+        position: absolute;
+        bottom: 0;
+        right: 63%;
+        margin-right: -50%;
+    }
+
+    .mainhead {
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .mainp {
+        color: white;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .c2 {
+        background-color: white;
+        width: 375px;
+        height: 200px;
+        border-radius: 15px;
+        position: absolute;
+        left: 370px;
+        display: inline-block;
+    }
+
+    .btn {
+        font-weight: bold;
+        width: 230px;
+        margin: 0 35px 20px;
+        height: 45px;
+        padding: 6px 15px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: #EE9BA3;
+        color: white;
+        font-size: 14px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .signup1 {
+        color: #748194;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .signup {
+        display: initial;
+    }
+
+    .signin {
+        display: initial;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="c1">
+            <div class="c11">
+                <h1 class="mainhead">Empowering Education Through Innovation!</h1>
+                <p class="mainp">Classlytics | Study Smarter with Study Plan Maker | Elevate Learning with Auto Note
+                    Taker</p>       
+            </div>
+            <div id="bottom">
+                <button class="btn"><a href="/auth/google">Sign In</a></button>
+            </div>
+            <!-- <div id="left">
+                <h2 class="s1class"><span>Login</span><span class="su">as Teacher</span></h2>
+            </div>
+            <div id="right">
+                <h2 class="s2class"><span>Login</span><span class="su">as Student</span></h2>
+            </div> -->
+            
+        </div>
+        <div class="c2">
+            <form class="signup">
+                <h1 class="signup1">Welcome Student!</h1>
+                <br><br><br><br>
+                <div id="google-signin-button"></div>
+                <button class="btn"><a href="/auth/google">Sign In</a></button>
+            </form>
+            <form class="signin">
+
+                <h1 class="signup1">Welcome Teacher!</h1>
+                <br><br><br><br>
+                <div id="google-signin-button"></div>
+                <button class="btn"><a href="/auth/google">Sign In</a></button>
+
+                <br><br><br><br>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".container").fadeIn(1000);
+            $(".s2class").css({ "color": "#EE9BA3" });
+            $(".s1class").css({ "color": "#748194" });
+            $("#left").removeClass("left_hover");
+            $("#right").addClass("right_hover");
+            $(".signin").css({ "display": "none" });
+            $(".signup").css({ "display": "" });
+        });
+        $("#right").click(function () {
+            $("#left").removeClass("left_hover");
+            $(".s2class").css({ "color": "#EE9BA3" });
+            $(".s1class").css({ "color": "#748194" });
+            $("#right").addClass("right_hover");
+            $(".signin").css({ "display": "none" });
+            $(".signup").css({ "display": "" });
+        });
+        $("#left").click(function () {
+            $(".s1class").css({ "color": "#EE9BA3" });
+            $(".s2class").css({ "color": "#748194" });
+            $("#right").removeClass("right_hover");
+            $("#left").addClass("left_hover");
+            $(".signup").css({ "display": "none" });
+            $(".signin").css({ "display": "" });
+        });
+    </script>
+</body>
+
+</html>

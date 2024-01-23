@@ -1,0 +1,29 @@
+if STATE = created and LATE = true -> missing 
+if STATE = turned in and LATE = true -> turned in late 
+if STATE = published -> assigned
+if STATE = RECLAIMED_BY_STUDENT -> unsubmitted 
+
+TODO: 
+1. store user profile info in json
+2. course with most assignments, least assignment
+
+DONE:
+1.when running in christ acc, i get axios error 431 -> hence limited to top 10 courses(in most recent order)
+2.created new route for displaying details info about assignments like title etc (in show missing assignments analytis section)
+3.created two pages -> overall stats and course wise stats 
+4.automatically rerouted to /student or /teacher route based on the google account
+5.automatically redirect to respective streamlit dashboards based on role(mentioned in 4)
+6th oct
+6.made missing and late table from dropdown
+7.changed course wise submission status to no of submissions per course
+8. assignment submissions time patters 
+9. avg assignments per week -> not getting correct start and end date
+
+
+LATER:
+1. connect to database
+CALC AVG GRADE:
+1. check if key exists -> get the assignedGrade from submission_data  
+2. check if key exists -> get the maxPoints from submission_metadata 
+3. map both by using course_id, however, this might cause a conflict: # Create a dictionary to map course IDs to course names
+course_id_to_name = {course['id']: course['name'] for course in course_data} 
