@@ -11,7 +11,7 @@ from streamlit_tags import st_tags
 import pytz
 from collections import defaultdict
 
-#-----------------------STYLES-----------------------------
+
 #----SCORE CARDS----
 st.markdown(
             """
@@ -117,6 +117,7 @@ st.markdown (
     """,
     unsafe_allow_html=True,
 )
+
 #--------LOAD AND MERGE JSON DATA---------
 # Load course data from the course JSON file
 with open(r'C:\Users\Abigail\Desktop\gcr\GCRdata\finalCourses.json', 'r', encoding='utf-8') as course_file:
@@ -168,23 +169,8 @@ def subStatusOverview():
     st.plotly_chart(fig)
 
 
+# ------TIMELINE CHART------
 def subTimeline():
-    # ------TIMELINE CHART------
-    # submission_dates = [submission["creationTime"] for submission in submission_data]
-    # submission_dates = pd.to_datetime(submission_dates)
-    # # Create a DataFrame with submission dates
-    # timeline_data = pd.DataFrame({"Date": submission_dates})
-    # # Group submission counts by date
-    # submission_counts = timeline_data.resample("D", on="Date").size().fillna(0)
-    # # Apply Gaussian smoothing
-    # smoothed_counts = submission_counts.rolling(7, center=True, min_periods=1).mean()
-    # timeline_data = pd.DataFrame({"Date": submission_counts.index, "Submission Count": smoothed_counts.values})
-    # fig = px.line(timeline_data, x="Date", y="Submission Count", title="Submission Timeline")
-    # fig.update_xaxes(title_text="Date")
-    # fig.update_yaxes(title_text="Submission Count")
-    # # Display the timeline chart
-    # st.plotly_chart(fig)
-
     #LATEST
     submission_dates = [submission.get("creationTime", "") for submission in submission_data]
     submission_dates = [date for date in submission_dates if date]  # Remove empty strings
@@ -223,6 +209,8 @@ def convert_to_ist(utc_datetime_str):
     except ValueError:
         return "Invalid Date/Time"  # Handle invalid datetime strings
     
+
+# ------SUBMISSIONS BY TIME OF DAY CHART------
 def subTimeOfDay():     
     # Add labels and title
     st.subheader("Submission Times Throughout the Day")             
@@ -250,6 +238,7 @@ def subTimeOfDay():
 
     st.markdown("---")  # Add a separator
 
+
 def avgAssignmentsWeek():
     # Initialize variables for start and end dates
     start_date = None
@@ -274,6 +263,9 @@ def avgAssignmentsWeek():
     average_assignments_per_week = round(total_assignments / total_weeks)
     return average_assignments_per_week
 
+
+
+# -----------SCORE CARD FNS----------
 def     scorecards():
     # Assuming you have the relevant data loaded into submission_data
     col1, col2, col3, col4 = st.columns(4)
@@ -311,7 +303,6 @@ def     scorecards():
 
 #---------------COURSE SPECIFIC FUNCTIONS-------------------------
 #--course wise table---
-# NO WAY TO VIZ HOW MANY ASSIGNEMNTS ARE ASSIGNED IN GCR -> ONLY SHOWS ICONS IN THE MAIN UI SCREEN
 def courseSubBar():
 # Create a dictionary to store the assignment counts per course
     course_assignment_counts = {}
@@ -334,31 +325,6 @@ def courseSubBar():
     # Create a bar chart using Plotly
     fig = px.bar(course_df, x="Course Name", y="Count", title="Total Assignments per Course")
     st.plotly_chart(fig)
-#     # ------COURSE WISE TABLE------
-#     # Create a DataFrame to store course-wise submission status
-#     course_submission_data = []
-
-#     for submission in submission_data:
-#         course_name = submission["courseId"]
-#         state = submission["state"]
-
-#         # Check if a course entry already exists
-#         existing_entry = next((entry for entry in course_submission_data if entry["Course Name"] == course_name and entry["Status"] == state), None)
-
-#         if existing_entry:
-#             # Update the existing entry
-#             existing_entry["Count"] += 1
-#         else:
-#             # Create a new entry for the course and status combination
-#             course_entry = {"Course Name": course_name, "Status": state, "Count": 1}
-#             course_submission_data.append(course_entry)
-
-#     # Create a DataFrame from the course submission data
-#     course_df = pd.DataFrame(course_submission_data)
-
-#     # Create a grouped bar chart using Plotly
-#     fig = px.bar(course_df, x="Course Name", y="Count", color="Status", barmode="group", title="Course-wise Submission Status")
-#     st.plotly_chart(fig)
 
 
 def courseOntimeLate():
@@ -404,22 +370,13 @@ def courseOntimeLate():
     fig.update_layout(barmode="group")
     st.plotly_chart(fig)
 
+
 # Helper function to check if an assignment is missing
 def is_assignment_missing(submission):
     return submission.get("late", False) == True and submission["state"] == "CREATED"
-
-
-# Define a function to assign a unique color to course names
-# Create a dictionary to store the mapping of course names to CSS classes
-course_styles = {}
-def assign_unique_color(course_name):
-    if course_name not in course_styles:
-        # Generate a unique color using hexadecimal notation
-        unique_color = "#{:02x}{:02x}{:02x}".format(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-        course_styles[course_name] = unique_color
-    return course_styles[course_name]
    
-
+   
+# ------LATE COURSES DROPDOWN------
 # Function to display missing assignments
 def lateCourseDropdown():
     st.write("\n")
@@ -472,25 +429,15 @@ def lateCourseDropdown():
                     "Description": assignment_description,
                     "Link": link
                 })
-                # Add a Markdown link to the list of Markdown links
-                # markdown_links.append(f"[{assignment_title} Assignment]({link})")
 
-                # Display the table of assignment details
-                
-                # # Display assignment details
-                # st.markdown(f'**Course**: ***{course_name}***')
-                # st.markdown(f'**Assignment Title**: {assignment_title}')
-                # st.markdown(f'**Description:** {assignment_description}')
-                
-                # st.markdown(f'**Due Date:** {due_date_str}')
-                # st.markdown(f'**Link:** [{assignment_title} Assignment]({link})')
-                # st.divider()
 
     # # Create a DataFrame from the table_data list
     df = pd.DataFrame(table_data)
     # # Render the course names as tags with dynamically assigned random colors
     st.data_editor(df, hide_index=True)
 
+
+# ------LATE COURSES TABLE------
 def courseSubTable():
     # Create a dictionary to store course statistics
     course_statistics = {}
@@ -549,9 +496,6 @@ def courseSubTable():
         },
         hide_index=False,  # Set to True if you want to hide the index column
     )
-
-
-
                 
 
 #--------------------------------------MAIN--------------------------------------------
