@@ -60,8 +60,6 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '100mb' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Set the 'views' directory for your EJS templates
-app.set('views', path.join(__dirname, 'views'));
 //use ejs
 app.set('view engine', 'ejs');
 
@@ -73,7 +71,6 @@ passport.use(new GoogleStrategy({
 },
   function (accessToken, refreshToken, profile, done) {
     // This function is called after successful authentication
-    // You can save user data in your database here or perform other actions
     return done(null, { profile, accessToken, refreshToken });
   }));
 
@@ -128,16 +125,13 @@ app.get('/callback',
   }
 );
 
-//FIEXD:NOT AUTHORIZED AS THERE IS LIKELY SOME ERROR WITH ACCESS TOKEN ie: req.user.accessToken
 app.get('/success', (req, res) => {
   // //ERROR HANDLING
-  // console.log("CHECK ACCESS TOKEN",req.user.accessToken)
   if (req.isAuthenticated() && req.user.accessToken) {
     console.log("in success fn")
     //set user access token for API client
     oauth2Client.setCredentials({ access_token: req.user.accessToken });
     
-    //NEW 5TH OCT - REROUTE BASED ON USER TYPE
     const classroom = google.classroom({ version: 'v1', auth: oauth2Client });
     classroom.userProfiles.get({userId: 'me'}, (err, response) => {
       if (err) {
@@ -156,7 +150,6 @@ app.get('/success', (req, res) => {
         req.user.role = 'student';
       }
 
-      // res.send(userProfile);
       const filePath = "userProfile.json";
       let jsonStr = JSON.stringify(userProfile);
      
@@ -170,11 +163,6 @@ app.get('/success', (req, res) => {
         res.redirect('/student');
       }
     });
-
-    console.log("Access token:", req.user.accessToken);
-    console.log("after obtaining access token")
-    //res.render("selectRole", { user: req.user });
-    // res.status(200).send('Welcome ' + req.user.profile.displayName);
   }
   else {
     res.send("You are not authenticated")
@@ -220,8 +208,6 @@ app.get('/teacher', (req, res) => {
 
               //throws error if nothing is submitted, so to overcome it:
               if (!Array.isArray(courseWorkList)) {
-                // console.error("CourseWorkList is not an array for course Id: ", course.id);
-                // reject("Invalid courseWorkList");
                 resolveCourseWork([]);
                 return;
               }
@@ -234,7 +220,6 @@ app.get('/teacher', (req, res) => {
                     courseWorkId: courseWork.id
                   }, (err, submissionsResponse) => {
                     if (err) {
-                      // console.error("Error listing student submissions for course Id:", course.id, "CourseWorkId:", courseWork.id, "Error:", err);
                       rejectCourseWork(err);
                     } else {
                       const studentSubmissions = submissionsResponse.data.studentSubmissions;
@@ -262,8 +247,6 @@ app.get('/teacher', (req, res) => {
       // Wait for all courses and their submissions to be fetched
       Promise.all(submissionsPromises)
         .then(coursesWithSubmissions => {
-          // Render user details + course info
-          //res.render("teacher", { user: req.user, courses: coursesWithSubmissions, student: students });
           const jsonData = JSON.stringify(coursesWithSubmissions, null, 2); // Use null, 2 for pretty formatting
           
           // Set response headers to indicate JSON content and attachment
@@ -273,7 +256,6 @@ app.get('/teacher', (req, res) => {
           res.send(jsonData);
         })
         .catch(err => {
-          // console.error("Error fetching student submissions:", err);
           res.status(500).send('Error fetching student submissions');
         });
     });
@@ -291,16 +273,10 @@ app.get("/courses", (req, res) => {
   // 1. GET LIST OF ENROLLED COURSES
   classroom.courses.list({}, (err, response) => {
     if (err) {
-      // console.error("Error listing student courses", err);
       res.status(500).send("Error listing student courses");
       return;
     }
     const courses = response.data.courses;
-    console.debug("=============================================================")
-    console.debug("Sending Courses Now")
-    console.debug("=============================================================")
-    console.debug(courses);
-
     res.send(courses)
     console.log(courses)
   })
@@ -308,7 +284,6 @@ app.get("/courses", (req, res) => {
 
 
 app.get("/coursesubmissions", (req, res) => {
-  console.log("We are in Submissions");
   const classroom = google.classroom({ version: "v1", auth: oauth2Client });
   const submits = [];
   const courses = req.query.courses;
@@ -324,9 +299,6 @@ app.get("/coursesubmissions", (req, res) => {
             reject(err);
           } else {
             const subs = response.data.studentSubmissions;
-            console.debug("=============================================================");
-            console.debug("New Submission");
-            console.debug("=============================================================");
             submits.push(subs);
             resolve(subs);
           }
@@ -338,13 +310,9 @@ app.get("/coursesubmissions", (req, res) => {
 
   Promise.all(promises)
     .then(() => {
-      console.debug("=============================================================");
-      console.debug("Sending Submissions Now");
-      console.debug("=============================================================");
       res.send(submits);
     })
     .catch((err) => {
-      console.error("Error listing student subs", err);
       res.status(500).send("Error listing student subs");
     });
 });
@@ -381,7 +349,6 @@ app.get("/courseworks", async (req, res) => {
 });
 
 app.get("/student", async (req, res) => {
-  //REMOVE COMMENT: res.send("WELCOME STUDENT");
   const maxCourses = 15; // Set the maximum number of courses to fetch
   const finalsubs = [];
   
@@ -397,7 +364,6 @@ app.get("/student", async (req, res) => {
       });
 
       const submissions = submissionResponse.data;
-      //NEW 1ST OCT
        // Fetch course works (assignments) data
       const courseWorksResponse = await axios.get('http://localhost:5000/courseworks', {
         params: {courses: courses}
@@ -406,9 +372,7 @@ app.get("/student", async (req, res) => {
       console.log("COURSE WORK DATA----------")
       console.log(courseWorks)
       console.log("IN STUDENT ROUTE SUBS");
-      //OLD: res.json(submissions);
-      //NEW 1ST OCT
-      //REMOVE COMMENT: res.json({ submissions: submissions, courseWorks: courseWorks }); // Send both submissions and course works data
+    
       //Rdirect to student streamlit dashboard 
       res.redirect('/streamlit_pages/overview.py');
       // Process and store the submissions
@@ -420,7 +384,6 @@ app.get("/student", async (req, res) => {
         }
       });
 
-      console.log("FINALLSLSLLSSLSL");
 
       // Do something with the submissions data
       // Create a JSON string from the finalsubs array
@@ -438,20 +401,13 @@ app.get("/student", async (req, res) => {
       // Write the JSON string to a file
       fs.writeFileSync(filePathC, jsonStrC, 'utf-8');
 
-      //NEW 1st OCT
       // Create a JSON string from the course works data
       let jsonStrCourseWorks = JSON.stringify(courseWorks);
       // Specify the file path and name for course works
       const filePathCourseWorks = 'finalcourseworks.json';
       // Write the JSON string to a file for course works
-      fs.writeFileSync(filePathCourseWorks, jsonStrCourseWorks, 'utf-8');
-      console.log(`Course works saved as ${filePathCourseWorks}`);
-      console.log(`File saved as ${filePathC}`);
-
-      //5TH OCT: STORE USER PROF
-      
+      fs.writeFileSync(filePathCourseWorks, jsonStrCourseWorks, 'utf-8');      
     } catch (error) {
-      console.error("Error fetching data:", error);
       res.status(500).send("Internal Server Error");
     }
   //START STREAMLIT SERVER IF USER IS AUTHENTICATED
@@ -466,10 +422,6 @@ app.get('/streamlit_pages/overview.py', (req, res) => {
   // Redirect to the Streamlit page URL
   res.redirect('http://localhost:8501/overview'); // Update with the correct URL
 });
-// //TODO:NEW OCT 4TH KUNAL
-// app.get('/materials', (req, res) => {
-
-// });
 
 
 //START STREAMLIT SERVER
@@ -479,17 +431,14 @@ function startStreamlitServer() {
 
   // Handle Streamlit server output (optional)
   streamlitProcess.stdout.on('data', (data) => {
-    console.log(`Streamlit Output: ${data}`);
   });
 
   // Handle Streamlit server errors (optional)
   streamlitProcess.stderr.on('data', (data) => {
-    console.error(`Streamlit Error: ${data}`);
   });
 
   // Handle Streamlit server exit (optional)
   streamlitProcess.on('close', (code) => {
-    console.log(`Streamlit Server exited with code ${code}`);
   });
 }
 
