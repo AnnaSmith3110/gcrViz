@@ -1,0 +1,17 @@
+# .gitignore
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore pages directory
+pages/
+
+# Ignore package-lock.json and package.json files
+package-lock.json
+package.json
+
+# Ignore app.js
+app.js
+
+# Ignore .env file
+.env
