@@ -120,7 +120,7 @@ st.markdown (
 
 #--------LOAD AND MERGE JSON DATA---------
 # Load course data from the course JSON file
-with open(r'C:\Users\Abigail\Desktop\gcr\GCRdata\finalCourses.json', 'r', encoding='utf-8') as course_file:
+with open(r'GCRdata\finalCourses.json', 'r', encoding='utf-8') as course_file:
     course_data = json.load(course_file)
 
 # Create a dictionary to map course IDs to course names
@@ -129,13 +129,13 @@ course_id_to_name = {course['id']: course['name'] for course in course_data}
 course_name_to_id = {course['name']: course['id'] for course in course_data}
 
 # Load submission data from the submission JSON file
-with open(r'C:\Users\Abigail\Desktop\gcr\GCRdata\finalsubs.json', 'r', encoding='utf-8') as submission_file:
+with open(r'GCRdata\finalsubs.json', 'r', encoding='utf-8') as submission_file:
     submission_data = json.load(submission_file)
 # Replace course IDs with course names in the submission data
 for submission in submission_data:
     submission['courseId'] = course_id_to_name.get(submission['courseId'], submission['courseId'])
 # Load coures coursework ie:detailed assignment info data
-with open(r'C:\Users\Abigail\Desktop\gcr\GCRdata\finalcourseworks.json', 'r', encoding='utf-8') as courseWork_file:
+with open(r'GCRdata\finalcourseworks.json', 'r', encoding='utf-8') as courseWork_file:
      submission_metadata = json.load(courseWork_file)
 
 
