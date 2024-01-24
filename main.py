@@ -512,7 +512,6 @@ def general_overview():
     subStatusOverview()
 
 
-
 # Define the function for the course-specific information page
 def course_specific_info():
     st.title("Course-Specific Information")
