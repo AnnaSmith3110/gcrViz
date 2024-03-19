@@ -6,3 +6,8 @@ This project is a Streamlit web application that provides analytics and insights
 
 - **General Overview**: Provides an overview of submission status, submission timeline, and submission times throughout the day.
 - **Course-Specific Information**: Displays course-wise submissions, on-time vs. late submissions, and missing assignments for each course.
+
+## Demo
+
+Live demo of the Google Classroom Analytics Dashboard [here](https://gcrviz.streamlit.app/).
+
